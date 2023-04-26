@@ -5,6 +5,9 @@
 :root {
   --container-width: 95%;
   --main-color: #faedeb;
+  --btn-color: #b3b3b3;
+  --btn-background: black;
+  --btn-secondary-background: black;
 }
 
 /*! Global Rules */
@@ -37,7 +40,7 @@ input {
 /*! Components */
 .btn {
   color: white;
-  background-color: black;
+  background-color: var(--btn-background);
   padding: 0.8rem 1.5rem;
   transition: 0.25s ease-out;
   cursor: pointer;
@@ -45,7 +48,8 @@ input {
 }
 
 .btn:hover {
-  color: gray;
+  color: var(--btn-color);
+  background-color: var(--btn-secondary-background);
 }
 
 .main-title {
@@ -72,6 +76,7 @@ header {
   display: flex;
   align-items: center;
   padding: 1rem 0;
+  background-color: white;
 }
 
 header nav ul {
@@ -155,7 +160,7 @@ section.hero {
 
 section.hero > div:nth-child(1) {
   width: 65%;
-  height: 65vh;
+  height: 70vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -163,11 +168,12 @@ section.hero > div:nth-child(1) {
 
 section.hero div:has(img) {
   z-index: 9;
+  position: relative;
 }
 
 section.hero div:has(img) img {
-  width: 100%;
-  position: relative;
+  height: auto;
+  vertical-align: middle;
 }
 
 section.hero div:has(img)::after {
@@ -197,34 +203,59 @@ section.hero div:has(h1) h1 {
   font-weight: 600;
 }
 
-/*! Hero Section Start */
-section.popular {
+/*! Products Section Section Start */
+section.products-section {
   padding: 5rem 0 3rem;
+  background-color: white;
 }
 
-section.popular .products {
+section.products-section .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   margin: 0 auto;
   width: 60%;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+section.products-section .products .product {
+  position: relative;
+  z-index: 3;
+}
+
+section.products-section .products .product i {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.65);
+  border-radius: 50%;
+  padding: 0.3rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.35s ease-in-out;
+}
+
+section.products-section .products .product i + i {
+  top: 3.25rem;
 }
 
 /** Hover Animation Start */
-section.popular .products .product div:has(img) {
+section.products-section .products .product div:has(img) {
   position: relative;
   cursor: pointer;
 }
 
-section.popular .products .product:hover img:first-child {
+section.products-section .products .product:hover img:first-child {
   opacity: 0;
 }
 
-section.popular .products .product:hover img:last-child {
+section.products-section .products .product:hover img:last-child,
+section.products-section .products .product div:has(img):hover ~ i {
   opacity: 1;
+  z-index: -1;
 }
 
-section.popular .products .product div:has(img) img:last-child {
+section.products-section .products .product div:has(img) img:last-child {
   position: absolute;
   left: 0;
   opacity: 0;
@@ -233,39 +264,39 @@ section.popular .products .product div:has(img) img:last-child {
   transition-delay: 0.1s;
 }
 
-section.popular .products .product img {
+section.products-section .products .product img {
   width: 100%;
   transition: 0.35s ease-in-out;
 }
 /** Hover Animation End */
 
-section.popular .products .product div:has(h3) {
+section.products-section .products .product div:has(h3) {
   padding-left: 0.75rem;
 }
 
-section.popular .products .product span:nth-child(1) {
+section.products-section .products .product span:nth-child(1) {
   font-size: 0.75rem;
   color: gray;
   font-weight: 200;
   text-transform: uppercase;
 }
 
-section.popular .products .product span:last-child {
+section.products-section .products .product span:last-child {
   color: gray;
   font-size: 0.75rem;
   font-weight: 600;
 }
 
-section.popular .products .product h3 {
+section.products-section .products .product h3 {
   font-size: 1.175rem;
   cursor: pointer;
 }
 
-section.popular .products .product:last-child {
+section.products-section .products .product:last-child {
   position: relative;
 }
 
-section.popular .products .product:last-child::after {
+section.products-section .products .product:last-child::after {
   content: "-10%";
   position: absolute;
   left: 1rem;
@@ -278,3 +309,137 @@ section.popular .products .product:last-child::after {
   padding: 0.25rem 0.6rem;
   box-shadow: 0 3px 0.6rem 0.75px rgba(0, 0, 0, 0.4);
 }
+
+/*! Men Collection (1) Start */
+section.men-cat {
+  padding-top: 1rem;
+  background-color: white;
+}
+
+section.men-cat > div {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+section.men-cat div:has(h2) {
+  text-align: center;
+}
+
+section.men-cat div:has(h2) span {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+section.men-cat div:has(h2) h2 {
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+section.men-cat div:has(h2) .btn {
+  margin-top: 1rem;
+}
+
+section.men-cat > div:has(img):last-child img {
+  width: 100%;
+  height: 92%;
+  object-fit: cover;
+}
+
+/*! New Collection (2) Start */
+/** The Background */
+.new-cat-bg {
+  background-image: url("../assets/collections/bg-01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: var(--container-width);
+  min-height: 100vh;
+  position: fixed;
+  inset: 0 auto 0 50%;
+  transform: translateX(-50%);
+  z-index: -999;
+}
+
+section.new-cat {
+  width: var(--container-width);
+  margin: 0 auto;
+  height: 65vh;
+}
+
+section.new-cat div {
+  height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+section.new-cat div span {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+section.new-cat div h2 {
+  font-size: 2.25rem;
+}
+
+section.new-cat div h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+/*! Women Collection (3) Start */
+section.women-cat {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 6rem 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+section.women-cat div {
+  flex-basis: 31%;
+  z-index: 9;
+}
+
+section.women-cat div:has(img) {
+  position: relative;
+  z-index: 9;
+}
+
+section.women-cat div:has(img)::after {
+  content: "";
+  position: absolute;
+  inset: 3rem -7rem -2.5rem -18rem;
+  background-color: var(--main-color);
+  z-index: -1;
+}
+
+section.women-cat div span {
+  color: gray;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+section.women-cat div h2 {
+  font-size: 2.25rem;
+}
+
+section.women-cat div p {
+  color: gray;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+/*TODO Onsale Rendered in the Products Section */
