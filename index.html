@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/global.css" />
     <title>E-Commerce</title>
   </head>
   <body>
@@ -19,7 +20,9 @@
         </ul>
       </nav>
       <div>
-        <img src="./assets/hero/logo-regular.png" alt="logo-img" />
+        <a href="index.html"
+          ><img src="./assets/hero/logo-regular.png" alt="logo-img"
+        /></a>
       </div>
       <div class="utils">
         <ul>
@@ -28,18 +31,41 @@
           </li>
           <li>
             <a href="#"
-              ><span>$0.00</span><i class="fa-solid fa-basket-shopping"></i
+              ><span>$0.00</span> <i class="fa-solid fa-basket-shopping"></i
             ></a>
           </li>
           <li><a href="#">Log in</a></li>
         </ul>
       </div>
     </header>
+    <!--*----------------------------------------------------------------- Hero Section Start -----------------------------------------------------------------*-->
+    <section class="hero">
+      <div>
+        <div>
+          <span>Women</span>
+          <h1>Slick Modern Awesome</h1>
+          <button class="btn">Shop Collection</button>
+        </div>
+        <div>
+          <img src="./assets/hero/hero.png" alt="hero-img" />
+        </div>
+      </div>
+    </section>
+    <!--* Popular Section Start (Collection 1) *-->
+    <section class="popular">
+      <div class="main-title">
+        <span>Summer Collection</span>
+        <h2>Popular T-Shirts</h2>
+      </div>
+      <!--todo The Products will be rendered here -->
+      <div class="products"></div>
+    </section>
+    <!--* Font Awesome *-->
     <script
       src="https://kit.fontawesome.com/77380724c1.js"
       crossorigin="anonymous"
     ></script>
+    <!--* main js file *-->
     <script type="module" src="./script/index.js"></script>
-    <script type="module" src="./constants/popularProducts.js"></script>
   </body>
 </html>
