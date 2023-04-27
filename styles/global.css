@@ -150,17 +150,50 @@ header div:has(i) ul li:has(span) i::after {
   border-radius: 50%;
 }
 
+header .mobile-utils {
+  z-index: 1000;
+}
+
+header .mobile-menu {
+  opacity: 0 !important;
+  position: absolute;
+  z-index: 999;
+  inset: 0;
+  transition: 0.3s;
+}
+
+header .mobile-menu ul {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  background-color: var(--main-color);
+  gap: 0;
+  inset: 0;
+}
+
+header .mobile-utils i.fa-bars {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-menu,
+  .mobile-utils {
+    display: none;
+  }
+}
 /*! Hero Section Start */
 section.hero {
   width: var(--container-width);
   overflow: hidden;
   margin: 0 auto;
   background-color: var(--main-color);
+  /* z-index: 9999; */
 }
 
 section.hero > div:nth-child(1) {
   width: 65%;
-  height: 70vh;
+  max-height: 62.5vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -172,20 +205,13 @@ section.hero div:has(img) {
 }
 
 section.hero div:has(img) img {
-  height: auto;
-  vertical-align: middle;
+  max-width: 100%;
 }
 
-section.hero div:has(img)::after {
-  content: "";
+section.hero div:has(img) img:last-child {
+  width: 95%;
   position: absolute;
-  inset: 15% 25% auto auto;
-  transform: translateY(-15%);
-  transform: translateX(25%);
-  background-color: white;
-  width: 30%;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  inset: 4rem auto auto 0;
   z-index: -1;
 }
 
@@ -210,16 +236,49 @@ section.products-section {
 }
 
 section.products-section .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  margin: 0 auto;
-  width: 60%;
-  gap: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 2rem;
 }
 
 section.products-section .products .product {
   position: relative;
+  width: 15%;
   z-index: 3;
+  transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1700px) {
+  section.products-section .products .product {
+    width: 17.5%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  section.products-section .products .product {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  section.products-section .products .product {
+    width: 26.5%;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  section.products-section .products .product {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section.products-section .products .product {
+    width: 40%;
+  }
 }
 
 section.products-section .products .product i {
@@ -322,6 +381,13 @@ section.men-cat > div {
   width: 85%;
   margin: 0 auto;
   gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 790px) {
+  section.men-cat > div {
+    flex-direction: column;
+  }
 }
 
 section.men-cat div:has(h2) {
@@ -388,6 +454,7 @@ section.new-cat div span {
 
 section.new-cat div h2 {
   font-size: 2.25rem;
+  text-align: center;
 }
 
 section.new-cat div h3 {
@@ -417,6 +484,10 @@ section.women-cat div:has(img) {
   z-index: 9;
 }
 
+section.women-cat div:has(img) img {
+  width: 100%;
+}
+
 section.women-cat div:has(img)::after {
   content: "";
   position: absolute;
@@ -443,3 +514,112 @@ section.women-cat div p {
 }
 
 /*TODO Onsale Rendered in the Products Section */
+
+/*! Media Queries */
+@media screen and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+
+  .new-cat-bg {
+    background-position: 73%;
+  }
+
+  header nav,
+  header .utils {
+    display: none;
+  }
+
+  header div:has(img) {
+    flex: 1;
+  }
+
+  header .mobile-menu {
+    opacity: 1;
+  }
+
+  header .mobile-menu ul {
+    position: absolute;
+    background-color: white;
+    inset: 0;
+  }
+
+  header .mobile-menu ul li:has(i) {
+    align-self: end;
+    padding: 0.75rem 0.75rem 0 0;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+  }
+
+  header .mobile-menu ul li:not(:has(i)) {
+    width: 100%;
+    padding: 1.65rem 1rem;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    font-size: 0.7rem;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: 0.35s;
+  }
+
+  header .mobile-menu ul li:not(:has(i)):hover {
+    background-color: white;
+  }
+
+  header .mobile-menu ul li:nth-child(2) {
+    background-color: white;
+    cursor: default;
+  }
+
+  header .mobile-utils {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2rem;
+  }
+
+  section.hero {
+    padding-top: 3rem;
+  }
+
+  section.hero div:first-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  section.hero > div {
+    flex-direction: column;
+  }
+
+  section.hero div:has(img) {
+    margin-top: 3rem;
+    max-width: 85%;
+  }
+
+  section.hero div:has(img) img:last-child {
+    transform: scale(1.175);
+  }
+}
+
+@media screen and (max-width: 740px) {
+  section.women-cat {
+    flex-direction: column;
+    align-items: start;
+    padding-top: 4rem;
+  }
+
+  section.women-cat div:first-child {
+    text-align: left;
+    order: 2;
+  }
+
+  section.women-cat div:last-child {
+    order: 1;
+    padding: 0 0 2rem 0;
+  }
+
+  section.women-cat div:has(img)::after {
+    content: "";
+    display: none;
+  }
+}

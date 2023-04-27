@@ -6,6 +6,9 @@ import { onSaleProducts } from "../constants/onSaleProducts.js";
 const productsContainers = document.querySelectorAll(".products");
 let popularProductsList = [];
 let onSaleProductsList = [];
+const menu = document.querySelector(".mobile-menu");
+const menuBar = document.querySelector(".fa-bars");
+const xMark = document.querySelector(".x-mark");
 
 //! Functions
 const displayProducts = (products, productsList, index) => {
@@ -41,5 +44,17 @@ const windowLoad = () => {
   displayProducts(onSaleProducts, onSaleProductsList, 2);
 };
 
+const openMobileMenu = () => {
+  menu.style.cssText = "opacity: 1 !important;";
+  menu.style.zIndex = "1000";
+};
+
+const closeMobileMenu = () => {
+  menu.style.opacity = "0";
+  menu.style.zIndex = "999";
+};
+
 //! Event Listeners
 window.addEventListener("load", windowLoad);
+menuBar.addEventListener("click", openMobileMenu);
+xMark.addEventListener("click", closeMobileMenu);
