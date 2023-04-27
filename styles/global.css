@@ -37,6 +37,10 @@ input {
   all: unset;
 }
 
+section:not(section.new-cat) {
+  background-color: white;
+}
+
 /*! Components */
 .btn {
   color: white;
@@ -515,6 +519,35 @@ section.women-cat div p {
 
 /*TODO Onsale Rendered in the Products Section */
 
+/*! Reviews Section Start */
+section.reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.75rem;
+}
+
+section.reviews h2 {
+  font-size: 2.25rem;
+}
+
+section.reviews a {
+  font-weight: 600;
+  text-decoration: underline;
+  max-width: 28%;
+}
+
+section.reviews i {
+  color: #f0ad4e;
+}
+
+section.reviews span {
+  color: gray;
+  font-size: 0.85rem;
+}
+
 /*! Media Queries */
 @media screen and (max-width: 1023px) {
   html {
@@ -598,6 +631,10 @@ section.women-cat div p {
 
   section.hero div:has(img) img:last-child {
     transform: scale(1.175);
+  }
+
+  section.reviews a {
+    max-width: 60%;
   }
 }
 
