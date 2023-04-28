@@ -394,6 +394,7 @@ section.men-cat > div {
 @media screen and (max-width: 790px) {
   section.men-cat > div {
     flex-direction: column;
+    width: var(--container-width);
   }
 }
 
@@ -437,6 +438,25 @@ section.men-cat > div:has(img):last-child img {
   z-index: -999;
 }
 
+@media screen and (max-width: 1023px) {
+  .new-cat-bg {
+    display: none;
+  }
+
+  section.new-cat {
+    background-image: url("../assets/collections/bg-01.jpg");
+    background-size: cover;
+    background-position: 50%;
+    height: 600px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section.new-cat {
+    background-position: 83%;
+  }
+}
+
 section.new-cat {
   width: var(--container-width);
   margin: 0 auto;
@@ -469,6 +489,17 @@ section.new-cat div h3 {
   margin-bottom: 1.25rem;
 }
 
+@media screen and (max-width: 480px) {
+  section.new-cat div h2 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  section.new-cat div h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
 /*! Women Collection (3) Start */
 section.women-cat {
   width: var(--container-width);
