@@ -429,7 +429,7 @@ section.men-cat > div:has(img):last-child img {
   background-image: url("../assets/collections/bg-01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: var(--container-width);
+  width: 94.9%;
   min-height: 100vh;
   position: fixed;
   inset: 0 auto 0 50%;
@@ -473,7 +473,7 @@ section.new-cat div h3 {
 section.women-cat {
   width: var(--container-width);
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 6rem 0 2rem;
   background-color: white;
   display: flex;
   align-items: center;
@@ -715,7 +715,7 @@ footer div:last-child {
 /*! Media Queries */
 @media screen and (max-width: 1023px) {
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .new-cat-bg {
@@ -798,7 +798,9 @@ footer div:last-child {
   }
 
   section.reviews a {
-    max-width: 60%;
+    max-width: 85%;
+    font-size: 1.15rem;
+    letter-spacing: 1.5;
   }
 
   footer .subscription-utils input {
@@ -827,7 +829,19 @@ footer div:last-child {
   section.women-cat {
     flex-direction: column;
     align-items: start;
-    padding-top: 4rem;
+    padding: 3rem 0 0;
+  }
+
+  section.women-cat .content {
+    background-color: var(--main-color);
+    padding: 2rem !important;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+
+  section.women-cat .content p {
+    width: 90%;
+    margin: 1rem 0;
   }
 
   section.women-cat div:first-child {
