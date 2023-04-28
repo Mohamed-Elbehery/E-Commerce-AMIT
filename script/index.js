@@ -3,9 +3,9 @@ import { popularProducts } from "../constants/popularProducts.js";
 import { onSaleProducts } from "../constants/onSaleProducts.js";
 
 //! Variables
-const productsContainers = document.querySelectorAll(".products");
 let popularProductsList = [];
 let onSaleProductsList = [];
+const productsContainers = document.querySelectorAll(".products");
 const menu = document.querySelector(".mobile-menu");
 const menuBar = document.querySelector(".fa-bars");
 const xMark = document.querySelector(".x-mark");
@@ -20,8 +20,16 @@ const displayProducts = (products, productsList, index) => {
           <img productId="${product.id}" src="${product.personImg}" alt="${product.title}" />
           <img productId="${product.id}" src="${product.img}" alt="${product.title}" />
         </div>
+        <div>
+        <div class="shopping-cart-tooltip">
         <i class="fa-solid fa-basket-shopping"></i>
+          <span>Select Options</span>
+        </div>
+        <div class="quick-view-tooltip">
         <i class="fa-solid fa-eye"></i>
+          <span>Quick View</span>
+        </div>
+        </div>
         <div>
         <span>${product.category}</span>
         <h3>${product.title}</h3>

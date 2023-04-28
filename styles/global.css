@@ -138,10 +138,45 @@ section.products-section .products .product i {
   transition: 0.35s ease-in-out;
 }
 
-section.products-section .products .product i + i {
+section.products-section .products .product i.fa-eye {
   top: 3.25rem;
 }
 
+section.products-section .products .product:hover i {
+  opacity: 1;
+}
+
+section.products-section .products .product .fa-eye:hover,
+section.products-section .products .product .fa-basket-shopping:hover {
+  color: black;
+}
+
+section.products-section .products .product .shopping-cart-tooltip span,
+section.products-section .products .product .quick-view-tooltip span {
+  position: absolute;
+  right: 3.25rem;
+  top: 3.2rem;
+  color: white !important;
+  background-color: black;
+  font-size: 0.6rem !important;
+  padding: 0.4rem;
+  border-radius: 0.35rem;
+  text-transform: unset;
+  pointer-events: none;
+  font-family: "Poppins";
+  font-weight: 500;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+section.products-section .products .product .shopping-cart-tooltip span {
+  top: 0.9rem;
+}
+
+section.products-section .products .product .fa-eye:hover + span,
+section.products-section .products .product .fa-basket-shopping:hover + span {
+  opacity: 1;
+}
 /** Hover Animation Start */
 section.products-section .products .product div:has(img) {
   position: relative;
@@ -152,8 +187,7 @@ section.products-section .products .product:hover img:first-child {
   opacity: 0;
 }
 
-section.products-section .products .product:hover img:last-child,
-section.products-section .products .product div:has(img):hover ~ i {
+section.products-section .products .product:hover img:last-child {
   opacity: 1;
   z-index: -1;
 }
