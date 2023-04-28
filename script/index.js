@@ -51,7 +51,7 @@ const openMobileMenu = () => {
 
 const closeMobileMenu = () => {
   menu.style.opacity = "0";
-  menu.style.zIndex = "999";
+  menu.style.zIndex = "-1";
 };
 
 //! Event Listeners
