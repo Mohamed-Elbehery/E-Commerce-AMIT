@@ -231,24 +231,23 @@ header nav ul {
 header nav ul li a {
   position: relative;
   font-size: 0.75rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.8rem;
 }
 
 header nav ul li a::after {
   content: "";
   position: absolute;
-  inset: auto auto 0 0;
+  inset: auto auto -100% -100%;
   background-color: black;
-  height: 2px;
+  height: 1px;
   width: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.35s ease-out;
+  opacity: 0;
 }
 
 header nav ul li a:hover::after {
-  transform: scaleX(100%);
-  width: 100%;
+  left: 0;
+  opacity: 1;
+  transition: 0.4s ease-in-out;
 }
 
 header nav,
