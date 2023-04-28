@@ -154,28 +154,35 @@ section.products-section .products .product .fa-basket-shopping:hover {
 section.products-section .products .product .shopping-cart-tooltip span,
 section.products-section .products .product .quick-view-tooltip span {
   position: absolute;
-  right: 3.25rem;
-  top: 3.2rem;
+  right: 3.45rem;
+  top: 3.1rem;
   color: white !important;
   background-color: black;
-  font-size: 0.6rem !important;
-  padding: 0.4rem;
+  font-size: 0.65rem !important;
+  padding: 0.5rem;
   border-radius: 0.35rem;
-  text-transform: unset;
-  pointer-events: none;
-  font-family: "Poppins";
-  font-weight: 500;
   opacity: 0;
+  pointer-events: none;
   transition: 0.35s ease;
 }
 
 section.products-section .products .product .shopping-cart-tooltip span {
-  top: 0.9rem;
+  top: 0.85rem;
 }
 
 section.products-section .products .product .fa-eye:hover + span,
 section.products-section .products .product .fa-basket-shopping:hover + span {
   opacity: 1;
+}
+
+section.products-section .products .product .tooltip::before {
+  content: "";
+  position: absolute;
+  right: -0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.5rem solid red;
+  border-color: transparent transparent transparent black;
 }
 /** Hover Animation Start */
 section.products-section .products .product div:has(img) {

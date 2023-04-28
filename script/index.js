@@ -21,19 +21,19 @@ const displayProducts = (products, productsList, index) => {
           <img productId="${product.id}" src="${product.img}" alt="${product.title}" />
         </div>
         <div>
-        <div class="shopping-cart-tooltip">
-        <i class="fa-solid fa-basket-shopping"></i>
-          <span>Select Options</span>
-        </div>
-        <div class="quick-view-tooltip">
-        <i class="fa-solid fa-eye"></i>
-          <span>Quick View</span>
-        </div>
+          <div class="shopping-cart-tooltip">
+          <i class="fa-solid fa-basket-shopping"></i>
+            <span class="tooltip">Select Options</span>
+          </div>
+          <div class="quick-view-tooltip">
+          <i class="fa-solid fa-eye"></i>
+            <span class="tooltip">Quick View</span>
+          </div>
         </div>
         <div>
-        <span>${product.category}</span>
-        <h3>${product.title}</h3>
-        <span>${product.price}</span>
+          <span>${product.category}</span>
+          <h3>${product.title}</h3>
+          <span>${product.price}</span>
         </div>
       </div>
       `
