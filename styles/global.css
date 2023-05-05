@@ -163,6 +163,7 @@ section.products-section .products .product .quick-view-tooltip span {
   opacity: 0;
   pointer-events: none;
   transition: 0.35s ease;
+  z-index: 9;
 }
 
 section.products-section .products .product .shopping-cart-tooltip span {
