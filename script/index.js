@@ -94,8 +94,8 @@ const SendMail = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
   womenBg.style.display = "none";
-  SendMail();
   if (emailReg.test(footerFormInput.value)) {
+    SendMail();
     Swal.fire({
       position: "left",
       icon: "success",
