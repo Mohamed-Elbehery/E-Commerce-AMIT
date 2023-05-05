@@ -1101,3 +1101,21 @@ footer div:last-child {
     font-size: 2rem;
   }
 }
+
+@media screen and (min-width: 2540px) {
+  html {
+    font-size: 22.5px;
+  }
+}
+
+@media screen and (min-width: 3000px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 3500px) {
+  html {
+    font-size: 40px;
+  }
+}
