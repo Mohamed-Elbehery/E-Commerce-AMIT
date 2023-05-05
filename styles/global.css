@@ -41,7 +41,6 @@ input {
 section:not(section.new-cat, section.hero) {
   background-color: white;
 }
-
 /*! Components */
 .btn {
   color: white;
@@ -816,6 +815,44 @@ footer div:last-child {
   height: 2.5rem;
 }
 
+/* Backdrop Search */
+.backdrop-search {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.35s ease-out;
+}
+
+.backdrop-search input {
+  font-size: 2rem;
+  color: gray;
+}
+
+.backdrop-search i {
+  cursor: pointer;
+  color: white;
+}
+
+.backdrop-search i:hover {
+  color: gray;
+}
+
+.backdrop-search i:active {
+  color: white;
+}
+
+.backdrop-xmark {
+  position: absolute;
+  right: 7rem;
+  top: 4rem;
+}
 /*! Media Queries */
 @media screen and (max-width: 1023px) {
   html {

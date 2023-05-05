@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--* Global CSS File -->
     <link rel="stylesheet" href="./styles/global.css" />
+    <!--* Sweet Alert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>E-Commerce</title>
   </head>
   <body>
@@ -30,7 +33,9 @@
       <div class="utils">
         <ul>
           <li>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#"
+              ><i class="fa-solid fa-magnifying-glass search-icon"></i
+            ></a>
           </li>
           <li>
             <a href="#"
@@ -182,10 +187,10 @@
           Lorem ipsum dolor sit amet, adipiscing elit sed do eiusmod condimentum
         </p>
       </div>
-      <div class="subscription-utils">
+      <form class="subscription-utils">
         <input type="text" placeholder="Your email address..." />
         <button class="btn">Subscribe</button>
-      </div>
+      </form>
       <div>
         <ul>
           <li><a href="#">Buy T-Shirts</a></li>
@@ -205,6 +210,12 @@
       </div>
       <div></div>
     </footer>
+    <!--*----------------------------------------------------------------- Backdrop Search -----------------------------------------------------------------*-->
+    <div class="backdrop-search" id="backdrop-search">
+      <input type="text" placeholder="Search..." />
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-xmark backdrop-xmark"></i>
+    </div>
     <!--* Font Awesome *-->
     <script
       src="https://kit.fontawesome.com/77380724c1.js"
