@@ -235,11 +235,13 @@ section.products-section .products .product h3 {
   cursor: pointer;
 }
 
+section.products-section .products .product.sale,
 section.products-section .products .product:last-child {
   position: relative;
 }
 
-section.products-section .products .product:last-child::after {
+section.products-section .products .product.sale::after,
+section.products-section .products .product:last-child:after {
   content: "-10%";
   position: absolute;
   left: 1rem;

@@ -21,11 +21,11 @@ const footerFormInput = document.querySelector(".subscription-utils input");
 const womenBg = document.querySelector(".new-cat-bg");
 
 //! Functions
-const displayProducts = (products, productsList, index) => {
+const displayProducts = (products, productsList, index, className = "") => {
   productsList = products.map(
     (product) =>
       `
-      <div class="product">
+      <div class="product ${className}">
         <div>
           <img productId="${product.id}" src="${product.personImg}" alt="${product.title}" />
           <img productId="${product.id}" src="${product.img}" alt="${product.title}" />
@@ -59,7 +59,7 @@ const windowLoad = () => {
   displayProducts(popularProducts, popularProductsList, 1);
 
   //* Render On Sale Products
-  displayProducts(onSaleProducts, onSaleProductsList, 2);
+  displayProducts(onSaleProducts, onSaleProductsList, 2, "sale");
 };
 
 const openMobileMenu = () => {
