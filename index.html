@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="./styles/global.css" />
     <!--* Sweet Alert JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("TdwoZ6H40X-BKh82r");
+    </script>
     <title>E-Commerce</title>
   </head>
   <body>
@@ -217,8 +225,12 @@
     <div class="customization"></div>
     <!--*----------------------------------------------------------------- Backdrop Search -----------------------------------------------------------------*-->
     <div class="backdrop-search" id="backdrop-search">
-      <input type="text" placeholder="Search..." />
-      <i class="fa-solid fa-magnifying-glass"></i>
+      <form id="backdrop-form">
+        <input type="text" placeholder="Search..." id="backdrop-input" />
+        <button>
+          <i class="fa-solid fa-magnifying-glass" id="backdrop-search-icon"></i>
+        </button>
+      </form>
       <i class="fa-solid fa-xmark backdrop-xmark"></i>
     </div>
     <!--* Font Awesome *-->

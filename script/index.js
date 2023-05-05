@@ -15,9 +15,10 @@ const backdropSearch = document.querySelector("#backdrop-search");
 const searchIcon = document.querySelector(".search-icon");
 const backdropXmark = document.querySelector(".backdrop-xmark");
 const backdropInput = document.querySelector(".backdrop-search input");
+const backdropForm = document.querySelector("#backdrop-form");
 const footerForm = document.querySelector(".subscription-utils");
 const footerFormInput = document.querySelector(".subscription-utils input");
-const test = document.querySelector(".new-cat-bg");
+const womenBg = document.querySelector(".new-cat-bg");
 
 //! Functions
 const displayProducts = (products, productsList, index) => {
@@ -82,9 +83,18 @@ const hideSearchBackdrop = () => {
   document.body.style.overflow = "visible";
 };
 
+const SendMail = () => {
+  emailjs
+    .send("service_mgmott9", "template_l9yy3rl", {
+      email_id: footerFormInput.value,
+    })
+    .then((res) => console.log("Email was sent Successfully"));
+};
+
 const handleSubmit = (e) => {
   e.preventDefault();
-  test.style.display = "none";
+  womenBg.style.display = "none";
+  SendMail();
   if (emailReg.test(footerFormInput.value)) {
     Swal.fire({
       position: "left",
@@ -102,6 +112,15 @@ const handleSubmit = (e) => {
   }
 };
 
+const handleSearch = (e) => {
+  e.preventDefault();
+  window.open(
+    `https://websitedemos.net/t-shirts-store-04/?s=${backdropInput.value}`,
+    "_blank"
+  );
+  backdropInput.value = "";
+};
+
 //! Event Listeners
 window.addEventListener("load", windowLoad);
 menuBar.addEventListener("click", openMobileMenu);
@@ -109,4 +128,5 @@ xMark.addEventListener("click", closeMobileMenu);
 searchIcon.addEventListener("click", displaySearchBackdrop);
 backdropXmark.addEventListener("click", hideSearchBackdrop);
 footerForm.addEventListener("submit", handleSubmit);
-window.addEventListener("scroll", () => (test.style.display = "block"));
+backdropForm.addEventListener("submit", handleSearch);
+window.addEventListener("scroll", () => (womenBg.style.display = "block"));
